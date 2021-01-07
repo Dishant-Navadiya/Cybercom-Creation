@@ -1,0 +1,25 @@
+We can restore our file from last commited file.
+=>Command
+	eg.) git checkout   -- <File name>
+
+We can give option for selection all file
+=>Command
+	eg.) git checkout  -- .
+
+
+But what if we commited and want to get last commited file. [Means we want exact files that we have in last commit. ]
+
+First get commit id you want to get.
+	1) git log
+		it will give list of logs with commited id and many more information.
+		and then copy commit id .
+	2) git revert <commited id>
+
+	We can provide -n option for not commiting. it will keep in stage area.
+	
+	3) git revert -n  <commited id>
+		and then commit your changes.	
+	
+We can also travel time hahaha. we can go back to a particular commit. and make those chanes undo. [means delete the commits]
+	1) git reset --hard <commited id>
+	
