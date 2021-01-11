@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+}
+.avatar {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+.header {
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.header > h1 {
+  font-size: 50px;
+}
+.header > p {
+  font-size: 20px;
+}
+hr {
+  width: 85%;
+}
+.profile {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  height: 75vh;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 70%;
+  max-width: 250px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px 20px;
+}
+.card > p {
+  text-align: center;
+}
+.name {
+  text-align: center;
+}
+.name > span {
+  font-weight: bold;
+}
+.name > p {
+  color: gray;
+}
