@@ -4,13 +4,13 @@ const MikeTeams = [100, 100, 100];
 const MaryTeams = [100, 100, 100];
 
 //Function defination for calculating average.
-function avg(score) {
+const avg = (score) => {
   let totalScore = 0;
-  score.forEach(function (number) {
+  score.forEach((number) => {
     totalScore += number;
   });
   return totalScore / 3;
-}
+};
 
 //Calculating of average score for each item.
 const avgOfJhon = avg(JhonTeams);
