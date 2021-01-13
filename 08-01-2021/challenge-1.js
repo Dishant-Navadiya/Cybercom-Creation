@@ -1,6 +1,6 @@
 //Initialization of Height and mass.
 const Mark = [60, 0.1524];
-const John = [70, 0.1724];
+const John = [61, 0.1524];
 
 //Function defination.
 const calculateBMI = (mass, height) => {

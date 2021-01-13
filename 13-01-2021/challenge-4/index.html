@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>challenge-3</title>
+    <!-- defer is most important when we are link above the body tag. -->
+    <!-- bcoz when we write defer it means after body this script can loaded. -->
+    <script src="./challenge-4.js" defer></script>
+  </head>
+  <body>
+    <!-- created form for input from user. -->
+    <form>
+      <!-- user can insert amount here. -->
+      <label>Enter full name:</label><input type="text" id="fullname" /><br />
+      <label>Enter mass:</label><input type="text" id="mass" /><br />
+      <label>Enter height:</label><input type="text" id="height" /><br />
+      <button type="button" id="insert">Insert user</button>
+      <button type="button" id="get">get heighest BMI</button>
+    </form>
+    <!-- this will print output what is the tip and tip with billn amount. -->
+    <p id="output"></p>
+  </body>
+</html>
