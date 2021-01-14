@@ -1,0 +1,17 @@
+Localstorage
+	we can store values as a key pair format.
+	it default save values in string.
+methods
+	localstorage.getItem("<key name>")
+	localstorage.setItem("key name","value")
+	localstorage.removeItem("key name")
+
+session storage
+	sessionStorage.setItem("key name","value")
+	sessionStorage.getItem("key name")
+	sessionStorage.clear();
+
+///diffrences
+	localstorage values stays when we close our browser
+	sessionstorage removes values when we close the browser.
+
