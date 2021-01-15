@@ -1,0 +1,31 @@
+Javascript objects
+	in javascript every thing is an objects.
+	Object is a collection of properties. 
+	and peoperties is association between a key and value. and a property value can be a function.
+	aslo objects are predefined in the browser so we can define our own objects.
+	
+	eg.)var obj1 ={ name : "Dishant" , born : 1999 }
+	eg.)var objWithFunction = { name : "Dishant" , born : 1999 , age : function() {  return date.year - this.born }  }
+
+
+objects has properties which inherited from parent object so we can access methos in our objects.
+
+	eg.)obj1.hasOwnProperty('<property name>')
+
+We can create objects using constructor function.
+	
+	eg.) function Car(name,born){
+		this.name = name
+		this.born = born
+	       }
+	
+	      var obj1 = new Car( "Dishant" , 1999 )
+
+objects are passed their references when we initialize new objects from another object.
+
+	eg.) var obj1 = { name : "Dishant" }
+	       var obj2 =  obj1
+	
+	       if(obj1==obj2){
+		console.log("true same")
+	       }	
