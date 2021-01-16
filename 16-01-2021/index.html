@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact us.</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="./js/custom.js" defer></script>
+  </head>
+  <body>
+    <form class="form">
+      <div class="header-section">
+        <img src="./img/1.jpg" alt="contact us" class="img-title" />
+      </div>
+
+      <div class="input-control">
+        <i class="fa fa-user-o icon"> </i>
+        <input class="input-field" type="text" placeholder="Full name" />
+      </div>
+
+      <div class="input-control">
+        <i class="fa fa-envelope-o icon"> </i>
+        <input
+          class="input-field"
+          type="email"
+          placeholder="Eg example@gmail.com"
+        />
+      </div>
+
+      <div class="input-control">
+        <i class="fa fa-mobile icon"> </i>
+        <input
+          class="input-field"
+          type="text"
+          placeholder="Eg +91 1234567890"
+        />
+      </div>
+
+      <div class="input-control">
+        <i class="fa fa-comment-o icon"> </i>
+        <textarea
+          class="input-field"
+          type="te"
+          placeholder="Your comments..."
+          rows="7"
+        ></textarea>
+      </div>
+      <div class="button-area">
+        <button class="btn" type="button" onclick="sendRequest();">
+          Send now
+        </button>
+      </div>
+    </form>
+  </body>
+</html>
