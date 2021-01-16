@@ -1,0 +1,12 @@
+this function also accept the parameter and scop.
+
+function test(){
+	var num = 10;
+	return function(user){
+		console.log(num * user);
+	}
+}
+ 
+var userInput = test()
+userInput(5)
+it will print (5*10) = 50
