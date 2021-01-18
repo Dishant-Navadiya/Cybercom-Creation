@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Practice 7</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <form action="./Success.html" method="POST">
+      <fieldset>
+        <legend>Your address</legend>
+        <table>
+          <tr>
+            <td>First name</td>
+            <td>
+              <input type="text" name="firstName" />
+            </td>
+          </tr>
+          <tr>
+            <td>Last name</td>
+            <td>
+              <input type="text" name="lastName" />
+            </td>
+          </tr>
+          <tr>
+            <td>Street</td>
+            <td>
+              <input type="text" name="street" />
+            </td>
+          </tr>
+          <tr>
+            <td>City</td>
+            <td>
+              <input type="text" name="city" />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <fieldset>
+        <legend>Additional details</legend>
+        <table>
+          <tr>
+            <td>Biography</td>
+            <td>
+              <textarea name="bio"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>Image</td>
+            <td>
+              <input type="file" name="file" />
+            </td>
+          </tr>
+          <tr>
+            <td>Age Group</td>
+            <td>
+              <input
+                type="number"
+                placeholder=" 0 to 9 Years"
+                min="1"
+                max="9"
+                name="age"
+              />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <fieldset>
+        <legend>Interest</legend>
+        <table>
+          <tr>
+            <td>Hobbies</td>
+            <td>
+              <select size="4" name="hobby">
+                <option>Playing soccer</option>
+                <option>Dancing</option>
+                <option>Gardening</option>
+                <option>Watching movies</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Favourite car?</td>
+            <td>
+              <select name="favCar">
+                <option>Volvo</option>
+                <option>TATA</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Favourite public transport?</td>
+            <td>
+              <select size="6" name="favTransport">
+                <optgroup label="Ground">
+                  <option>Train</option>
+                  <option>Bus</option>
+                </optgroup>
+                <optgroup label="Water">
+                  <option>Boat</option>
+                  <option>ship</option>
+                </optgroup>
+              </select>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <table>
+        <tr>
+          <td>
+            <button type="submit">Submit</button>
+          </td>
+          <td>
+            <button type="reset">Reset</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
