@@ -4,10 +4,14 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const date = document.getElementById("date");
 const heading = document.getElementById("heading");
-const button = document.getElementById("button");
+const insertButton = document.getElementById("insertButton");
+const updateButton = document.getElementById("updateButton");
+
+updateButton.hidden = true;
 
 let data = JSON.parse(localStorage.getItem("users"));
 const todayDate = new Date().getFullYear();
+let updateIndex = null;
 
 const clearFormInput = () => {
   name.value = "";
@@ -16,26 +20,35 @@ const clearFormInput = () => {
   data.value = "";
 };
 
-const updateUser = (email) => {
-  heading.innerHTML = "Update User";
-  button.innerText = "Update";
+const toggle = (index) => {
+  updateIndex = index;
+  name.value = data[index].name;
+  email.value = data[index].email;
+  password.value = data[index].password;
+  date.value = data[index].birthdayDate;
 
-  // data.forEach((user)=>{
-  //     if(user.email === email){
-
-  //     }
-  // })
+  insertButton.hidden = true;
+  updateButton.hidden = false;
 };
 
-const deleteUser = (email) => {
-  var newData = data.filter((user) => user.email !== email);
-  data = newData;
+const updateUser = () => {
+  data[updateIndex].name = name.value;
+  data[updateIndex].email = email.value;
+  data[updateIndex].password = password.value;
+  data[updateIndex].birthdayDate = date.value;
+  data[updateIndex].age = todayDate - new Date(date.value).getFullYear();
+  updateIndex = null;
+  localStorage.setItem("users", JSON.stringify(data));
+  displayingRawintoTable();
+};
+
+const deleteUser = (index) => {
+  data.splice(index, 1);
   localStorage.setItem("users", JSON.stringify(data));
   displayingRawintoTable();
 };
 
 const insertUser = () => {
-  //   console.log(date.value);
   let userInfo = {
     name: name.value,
     email: email.value,
@@ -52,7 +65,7 @@ const insertUser = () => {
 
 const displayingRawintoTable = () => {
   var temp = "";
-  data.forEach((user) => {
+  data.forEach((user, index) => {
     temp += `
         <tr>
         <td>${user.name}</td>
@@ -60,8 +73,8 @@ const displayingRawintoTable = () => {
         <td>${user.password}</td>
         <td>${user.birthdayDate}</td>
         <td>${user.age}</td>
-        <td ><button type="button" class="btn btn-light btn-sm" onclick="updateUser('${user.email}');">Update</button></td>
-        <td ><button type="button" class="btn btn-light btn-sm" onclick="deleteUser('${user.email}');">Delete</button></td>
+        <td ><button type="button" class="btn btn-light btn-sm" onclick="toggle(${index});">Update</button></td>
+        <td ><button type="button" class="btn btn-light btn-sm" onclick="deleteUser('${index}');">Delete</button></td>
       </tr>
         `;
   });

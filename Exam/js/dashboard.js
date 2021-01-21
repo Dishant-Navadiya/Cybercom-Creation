@@ -1,20 +1,14 @@
 const data = JSON.parse(localStorage.getItem("users"));
-const currentUser = JSON.parse(sessionStorage.getItem("activeUser"));
-const userName = document.getElementById("userName");
+
 const outputAgeCards = document.getElementById("outputAgeCards");
 const outputBirthdayNames = document.getElementById("outputBirthdayNames");
 
-const todayDate = new Date().toLocaleDateString();
+const todayDate = new Date().toDateString();
 
 let underEighteen = [];
 let eighteenToFifty = [];
 let fiftyUp = [];
 let todaysBirthdays = [];
-
-const printAcitveUserName = () => {
-  userName.innerHTML = `Hello [${currentUser.name}]`;
-};
-printAcitveUserName();
 
 const appendCardsOfAge = () => {
   var temp = "";
@@ -66,7 +60,7 @@ const countingYears = () => {
 const findTodaysBirthday = () => {
   if (data) {
     data.forEach((user) => {
-      if (user.birthdayDate === todayDate) {
+      if (new Date(user.birthdayDate).toDateString() === todayDate) {
         todaysBirthdays.push(user);
       }
     });
@@ -77,13 +71,9 @@ findTodaysBirthday();
 const listingNamesofBirthdays = () => {
   var temp = "";
   todaysBirthdays.forEach((user) => {
+    console.log(user);
     temp += `<li class="list-group-item">${user.name}</li>`;
   });
   outputBirthdayNames.innerHTML = temp;
 };
-
-// function get() {
-//   console.log(
-//      new Date(document.getElementById("date").value).toLocaleDateString()
-//   );
-// }
+listingNamesofBirthdays();
