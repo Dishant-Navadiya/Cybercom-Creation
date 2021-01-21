@@ -7,6 +7,7 @@ const state = document.getElementById("state");
 const loginEmail = document.getElementById("loginEmail");
 const loginPassword = document.getElementById("loginPassword");
 let data = [];
+let sessionLogs = [];
 
 const registerAdmin = () => {
   if (password.value !== confirmPassword.value) {
@@ -40,6 +41,8 @@ const checkLogin = () => {
       sessionStorage.setItem("activeUser", JSON.stringify(currentUser));
       window.location.href = "./dashboard.html";
     } else if (currentUser) {
+      sessionLogs.push({ name: currentUser.name, loginTime: new Date() });
+      localStorage.setItem("sessionLogs", JSON.stringify(sessionLogs));
       sessionStorage.setItem("activeUser", JSON.stringify(currentUser));
       window.location.href = "./sub-user.html";
     } else {

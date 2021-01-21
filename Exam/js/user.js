@@ -38,6 +38,9 @@ const updateUser = () => {
   data[updateIndex].birthdayDate = date.value;
   data[updateIndex].age = todayDate - new Date(date.value).getFullYear();
   updateIndex = null;
+  insertButton.hidden = false;
+  updateButton.hidden = true;
+  clearFormInput();
   localStorage.setItem("users", JSON.stringify(data));
   displayingRawintoTable();
 };

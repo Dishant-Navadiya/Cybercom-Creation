@@ -10,7 +10,7 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    <script src="./js/user-session.js" defer></script>
+    <script src="./js/sub-user.js" defer></script>
     <script src="./js/display-user-name.js" defer></script>
     <script src="./js/logout.js" defer></script>
     <script
@@ -39,17 +39,6 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
-                  >Dashboard</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./user.html">Users</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./user-session.html">LoginSession</a>
-              </li>
-              <li class="nav-item">
                 <button class="btn btn-light" onclick="logoutUser();">
                   Logout
                 </button>
@@ -58,19 +47,8 @@
           </div>
         </div>
       </nav>
-      <h2 class="m-3" id="heading">Users Session Logs</h2>
-      <div class="raw">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Login Date Time</th>
-              <th scope="col">Logout Date Time</th>
-            </tr>
-          </thead>
-          <tbody id="outputTableRaws"></tbody>
-        </table>
-      </div>
+      <h1 class="m-3" id="heading">Welcome to cybercom creation</h1>
+      <h3 id="printHappy"></h3>
     </div>
   </body>
 </html>

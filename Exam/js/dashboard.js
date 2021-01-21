@@ -10,9 +10,9 @@ let eighteenToFifty = [];
 let fiftyUp = [];
 let todaysBirthdays = [];
 
-const appendCardsOfAge = () => {
+function appendCardsOfAge() {
   var temp = "";
-
+  console.log("hey");
   temp += `
         <div class="col-md-4">
         <div class="card text-white bg-secondary" style="max-width: 18rem">
@@ -40,7 +40,7 @@ const appendCardsOfAge = () => {
       </div>
       `;
   outputAgeCards.innerHTML = temp;
-};
+}
 
 const countingYears = () => {
   if (data) {
@@ -53,9 +53,15 @@ const countingYears = () => {
         fiftyUp.push(user);
       }
     });
+
+    // console.log(underEighteen);
+    // console.log(eighteenToFifty);
+    // console.log(fiftyUp);
     appendCardsOfAge();
   }
 };
+
+countingYears();
 
 const findTodaysBirthday = () => {
   if (data) {

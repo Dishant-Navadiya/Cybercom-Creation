@@ -4,4 +4,6 @@ const userName = document.getElementById("userName");
 const printAcitveUserName = () => {
   userName.innerHTML = `Hello [${currentUser.name}]`;
 };
-printAcitveUserName();
+if (currentUser) {
+  printAcitveUserName();
+}
