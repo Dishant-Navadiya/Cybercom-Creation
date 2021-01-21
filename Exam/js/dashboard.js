@@ -4,9 +4,7 @@ const userName = document.getElementById("userName");
 const outputAgeCards = document.getElementById("outputAgeCards");
 const outputBirthdayNames = document.getElementById("outputBirthdayNames");
 
-const todayDate = new Date(
-  document.getElementById("date").value
-).toLocaleDateString();
+const todayDate = new Date().toLocaleDateString();
 
 let underEighteen = [];
 let eighteenToFifty = [];
