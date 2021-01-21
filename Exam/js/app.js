@@ -6,8 +6,7 @@ const city = document.getElementById("city");
 const state = document.getElementById("state");
 const loginEmail = document.getElementById("loginEmail");
 const loginPassword = document.getElementById("loginPassword");
-const adminData = [];
-const userData = [];
+let data = [];
 
 const registerAdmin = () => {
   if (password.value !== confirmPassword.value) {
@@ -23,8 +22,8 @@ const registerAdmin = () => {
     city: city.value,
     state: state.value,
   };
-  adminData.push(adminCredentials);
-  localStorage.setItem("admin", JSON.stringify(adminData));
+  data.push(adminCredentials);
+  localStorage.setItem("users", JSON.stringify(data));
   return true;
 };
 
@@ -33,19 +32,20 @@ const checkLogin = () => {
   const password = loginPassword.value;
 
   if (localStorage.getItem("users")) {
-    userData = localStorage.getItem("users");
-    let currentUser = userData.find(
+    data = JSON.parse(localStorage.getItem("users"));
+    let currentUser = data.find(
       (item) => item.email === email && item.password === password
     );
-    if (currentUser) {
+    if (currentUser && currentUser.email == "dishant@gmail.com") {
       sessionStorage.setItem("activeUser", JSON.stringify(currentUser));
-      return true;
+      window.location.href = "./dashboard.html";
+    } else if (currentUser) {
+      sessionStorage.setItem("activeUser", JSON.stringify(currentUser));
+      window.location.href = "./sub-user.html";
     } else {
-      alert("user doese not exists");
-      return false;
+      alert("user does not exists");
     }
   } else {
     alert("user does not exists");
-    return false;
   }
 };
